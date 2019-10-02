@@ -1,0 +1,9 @@
+{
+  "name": "Hay trao cho khach",
+  "version": "1.0.0",
+  "description": "",
+  "template": {
+    "withCompare": false,
+    "withGenerator": false
+  }
+}

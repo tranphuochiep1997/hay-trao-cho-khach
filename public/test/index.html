@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>Last update <span id="last-update"></span></div>
+    <div>Id <span id="id"></span></div>
+    <div>count <span id="count"></span></div>
+    <div>emotion <span id="emotion"></span></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        const lastUpdate = document.getElementById('last-update');
+        const id = document.getElementById('id');
+        const count = document.getElementById('count');
+        const emotion = document.getElementById('emotion');
+
+		socket.on('customer-coming', function (data) {
+            const now = new Date();
+            lastUpdate.innerHTML = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+            id.innerHTML = data.id;
+            count.innerHTML = data.count;
+            emotion.innerHTML = data.emotion;
+        });
+    </script>
+</body>
+</html>
