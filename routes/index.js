@@ -9,27 +9,50 @@ router.get('/', function (req, res) {
 
 router.post('/customer-coming', async (req, res) => {
 		try {
-				const {id, unknown, gender, emotion} = req.body;
-				const customerRef = db.collection('Customers').doc(id);
-				if (unknown) {
+				let { id, gender, emotion } = req.body;
+				const customersRef = db.collection('Customers');
+				let aCustomerRef = {};
+				if (id) {
+						aCustomerRef = customersRef.doc(id);
+						// Increase count for known user
+						await aCustomerRef.update({
+								count: admin.firestore.FieldValue.increment(1)
+						});
+				} else {
 						// Create new collection when user is unknown
-						await customerRef.set({
+						aCustomerRef = await customersRef.add({
 								gender,
 								count: 1
 						});
-				} else {
-						// Increase count for known user
-						await customerRef.update({
-								count: admin.firestore.FieldValue.increment(1)
-						});
+						id = aCustomerRef.id;
 				}
 
 				// Get user data from database
-				const customer = await customerRef.get();
+				let customer = await aCustomerRef.get();
+				customer = customer.data();
+				gender = customer.gender;
+				let count = customer.count;
+
+				const productsRef = db.collection('Products');
+				const products = await productsRef
+						.where(`tag.${gender}`, '=', true)
+						.where(`tag.${emotion}`, '=', true)
+						.limit(3)
+						.get();
+				let recommends = [];
+				if (!products.empty) {
+						products.forEach(product => {
+								product = product.data();
+								delete product.tag;
+								recommends.push(product)
+						});
+				}
 				const response = {
 						id,
-						...customer.data(),
-						emotion
+						gender,
+						count,
+						emotion,
+						recommends
 				};
 				const io = req.app.get('io');
 				// Send data message to client

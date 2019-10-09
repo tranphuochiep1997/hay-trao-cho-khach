@@ -4,25 +4,28 @@
  * @apiDescription  Notify app customer is coming
  * @apiGroup Customers
  *
- * @apiParam {string} id User id generated from AI
+ * @apiParam {string|null} id User id generated from AI, null for unknown
  * @apiParam {String=MALE,FEMALE} gender
  * @apiParam {String} emotion
- * @apiParam {Boolean=true,false} unknown user is new or not
  * @apiParamExample Example:
  * {
  *	"id": "1",
  *	"gender": "MALE",
  *	"emotion": "happy",
- *	"unknown": false
  * }
  *
  *
  * @apiSuccessExample Success Response:
  * {
- *   "id": "1",
- *   "count": 25,
- *   "gender": "MALE",
- *   "emotion": "happy"
+ *	"id": "1",
+ *	"gender": "MALE",
+ *	"emotion": "happy",
+ *	"recommends": [
+ *	            {
+ *           "name": "Milk tea",
+ *           "picture": "https://i1.wp.com/yummiestreetfood.com/wp-content/uploads/2017/03/Yummie-Street-Food-Tea-4.jpg?fit=1920%2C1080&ssl=1"
+ *       }
+ *	]
  * }
  *
  */

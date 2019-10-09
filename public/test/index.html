@@ -17,6 +17,7 @@
     <div>Id <span id="id"></span></div>
     <div>count <span id="count"></span></div>
     <div>emotion <span id="emotion"></span></div>
+    <div>recommends <span id="recommends"></span></div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -25,6 +26,7 @@
         const id = document.getElementById('id');
         const count = document.getElementById('count');
         const emotion = document.getElementById('emotion');
+        const recommends = document.getElementById('recommends');
 
 		socket.on('customer-coming', function (data) {
             const now = new Date();
@@ -32,6 +34,7 @@
             id.innerHTML = data.id;
             count.innerHTML = data.count;
             emotion.innerHTML = data.emotion;
+            recommends.innerHTML = JSON.stringify(data.recommends);
         });
     </script>
 </body>
