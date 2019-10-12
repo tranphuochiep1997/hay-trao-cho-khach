@@ -221,7 +221,7 @@
                     }
                     var socket = io();
                     socket.on('customer-coming', function (data) {
-                        let count = data.count/4>>0;
+                        let count = data.count / 4 >> 0;
                         animate(count);
                     });
                     // This should be called on document.load
@@ -928,74 +928,6 @@
                     emotion.innerHTML = data.emotion;
                 });
             </script>
-            <!-- <div class="slice-bar">
-                <div class="slideshow-container">
-
-                    <div class="mySlides fade">
-                        <img src="./menu/1800.jpg" style="width:100%; height: 430px;">
-                        <div class="text">Life</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="./menu/1.jpg" style="width:100%; height: 430px;">
-                        <div class="text">and...</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="./menu/cafeHeader.jpg" style="width:100%; height: 430px;">
-                        <div class="text">Dream</div>
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                </div>
-                <br>
-
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
-                <script>
-                    var slideIndex = 1;
-                    showSlides(slideIndex);
-
-                    function plusSlides(n) {
-                        showSlides(slideIndex += n);
-                    }
-
-                    function currentSlide(n) {
-                        showSlides(slideIndex = n);
-                    }
-
-                    function showSlides(n) {
-                        var i;
-                        var slides = document.getElementsByClassName("mySlides");
-                        var dots = document.getElementsByClassName("dot");
-                        if (n > slides.length) { slideIndex = 1 }
-                        if (n < 1) { slideIndex = slides.length }
-                        for (i = 0; i < slides.length; i++) {
-                            slides[i].style.display = "none";
-                        }
-                        for (i = 0; i < dots.length; i++) {
-                            dots[i].className = dots[i].className.replace(" active", "");
-                        }
-                        slides[slideIndex - 1].style.display = "block";
-                        dots[slideIndex - 1].className += " active";
-                        // setTimeout(showSlides(2), 1000);
-                    }
-                    autoSlides();      
-                    function autoSlides() {
-                        showSlides(slideIndex);
-                        slideIndex++;
-                        if (slideIndex > 3) {
-                            slideIndex = 1
-                        }    
-                        setTimeout(autoSlides, 3000); // Change image every 2 seconds
-                    }
-                </script>
-            </div> -->
             <div class="menu">
                 <ul class="row-4-items">
                     <li class="menu-items">
@@ -1075,6 +1007,74 @@
                         </figure>
                     </li>
                 </ul>
+            </div>
+            <div class="slice-bar">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                        <img src="./menu/1800.jpg" style="width:100%; height: 430px;">
+                        <div class="text">Life</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="./menu/1.jpg" style="width:100%; height: 430px;">
+                        <div class="text">and...</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="./menu/cafeHeader.jpg" style="width:100%; height: 430px;">
+                        <div class="text">Dream</div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                <script>
+                    var slideIndex = 1;
+                    showSlides(slideIndex);
+
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+
+                    function showSlides(n) {
+                        var i;
+                        var slides = document.getElementsByClassName("mySlides");
+                        var dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) { slideIndex = 1 }
+                        if (n < 1) { slideIndex = slides.length }
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex - 1].style.display = "block";
+                        dots[slideIndex - 1].className += " active";
+                        // setTimeout(showSlides(2), 1000);
+                    }
+                    autoSlides();
+                    function autoSlides() {
+                        showSlides(slideIndex);
+                        slideIndex++;
+                        if (slideIndex > 3) {
+                            slideIndex = 1
+                        }
+                        setTimeout(autoSlides, 3000); // Change image every 2 seconds
+                    }
+                </script>
             </div>
         </div>
     </div>
