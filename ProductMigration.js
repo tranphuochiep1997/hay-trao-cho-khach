@@ -100,6 +100,24 @@ const { db } = require('./config/firebase');
 								NEUTRAL: true
 						}
 				}),
+				productsRef.add({
+						name: 'Mango smoothie',
+						picture: 'https://www.culinaryhill.com/wp-content/uploads/2015/08/Tropical-Mango-Smoothie-Culinary-Hill-square.jpg',
+						tag: {
+								FEMALE: true,
+								MALE: true,
+								SURPRISE: true
+						}
+				}),
+				productsRef.add({
+						name: 'Chia seed bubble tea',
+						picture: 'https://zphoto-3-baomoi.zadn.vn/w1000_r1m/18/05/26/229/26183090/1_90386.jpg',
+						tag: {
+								FEMALE: true,
+								MALE: true,
+								SURPRISE: true
+						}
+				}),
 		])
 				.then(() => console.log('DONE'))
 				.catch(err => console.log(err));
