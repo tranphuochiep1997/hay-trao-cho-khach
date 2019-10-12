@@ -16,7 +16,8 @@
 <div class="header">
     <div class="content-header">
         <div class="title">
-            <h1 class="site-title">Hãy trao cho khách</h1>
+			<h1 class="site-title">Hãy trao cho khách</h1>
+			<h6>Devfest - Demo - Green - Service</h6>
         </div>
         <div class="empty" id="empty"></div>
         <div class="forest">
@@ -161,9 +162,11 @@
 <div class="container" style="height: 450px">
 
     <div class="recommendation">
+		<h1 id="text-recomend" style="font-size: 25px;"></h1>
         <ul id="recommends" class="recommends">
         </ul>
-    </div>
+	</div>
+	<h1 id="text-menu" style="font-size: 25px;">Menu</h1>
     <div class="menu">
         <ul class="row-4-items">
             <li class="menu-items">
@@ -323,8 +326,11 @@
 
 								const recommendEl = $('#recommends');
 								recommendEl.empty();
+								const textRM = document.getElementById("text-recomend");
+								textRM.innerHTML = "Recomendation"
 								recommends.forEach(drink => {
-										recommendEl.append(`<li>
+										recommendEl.append(`
+									<li>
                                     <figure class="figure">
                                     <img src=${drink.picture} class="image-recomendation" alt=${drink.name}>
                                     <figcaption class="figcaption-recomendation">${drink.name}</figcaption>

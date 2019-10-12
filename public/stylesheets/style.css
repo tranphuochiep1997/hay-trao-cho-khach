@@ -8,13 +8,15 @@ body{
 .header{
   background-color: #33302d;
   padding: 10px;
-  text-align: left;
   color: white;
   height: 85px;
 }
 .content-header{
-  margin-left: 10%;
+  margin-left: 15%;
   display: flex;
+}
+.title h6{
+  margin-top: 30px;
 }
 .empty{
   flex: 0.75;
@@ -61,7 +63,41 @@ body{
   margin-top: 100px;
 
 }
-
+.recommendation{
+  padding: 0px;
+  margin: 0px;
+  margin-top: 30px;
+}
+.recommends{
+  padding: 0px;
+  margin: 0px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recommends li {
+  margin: 10px;
+}
+.image-recomendation{
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.figcaption-recomendation{
+  width: 200px;
+  border-radius: 10px;
+  max-height: 100%;
+  padding-top: 5px;
+  color: #fff;
+  font-size: 20px;
+  background: linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.3) 70%,transparent);
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .row-4-items{
   padding: 0px;
   margin: 0px;
@@ -82,18 +118,6 @@ ul {
   border-radius: 10px;
   object-fit: cover;
 }
-.image-recomendation{
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-.recommends{
-  padding: 0px;
-  margin: 0px;
-  margin-top: 30px;
-  display: flex;
-}
 figure{
   margin: 0;
   height: 100%;
@@ -101,19 +125,6 @@ figure{
   position: relative;
   text-align: center;
   display: flex;
-}
-.figcaption-recomendation{
-  width: 200px;
-  border-radius: 10px;
-  max-height: 100%;
-  padding-top: 5px;
-  color: #fff;
-  font-size: 20px;
-  background: linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.3) 70%,transparent);
-  position: absolute;
-  top: 93%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 figcaption{
   width: 85%;
