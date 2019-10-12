@@ -18,6 +18,8 @@ body{
 }
 .empty{
   flex: 0.75;
+  text-align: right;
+  font-size: 20px;
 }
 .forest{
   flex: 0.12;

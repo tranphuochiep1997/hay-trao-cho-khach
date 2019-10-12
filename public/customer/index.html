@@ -18,7 +18,7 @@
         <div class="title">
             <h1 class="site-title">Hãy trao cho khách</h1>
         </div>
-        <div class="empty"></div>
+        <div class="empty" id="empty"></div>
         <div class="forest">
             <div class="container-forest">
                 <svg id="animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -301,10 +301,11 @@
 						// Handle socket
 						const socket = io();
 						let lastUserId = null;
-
+						let emptyCount = document.getElementById('empty');
 						socket.on('customer-coming', function (data) {
 								const {id, count, recommends} = data;
 								animate(count);
+								emptyCount.innerHTML = count;
 								// Do nothing if user id unchanged
 								if (lastUserId === id) {
 										return;
