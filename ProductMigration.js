@@ -5,31 +5,74 @@ const { db } = require('./config/firebase');
 
 		Promise.all([
 				productsRef.add({
-						name: 'Milk cafe',
-						picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMMFqkmt8YrLj77ugXqcF3zrhuguEFppiPidhee8O05kcHXLA9Kw',
+						name: 'Tequila Sunrise Cocktail',
+						picture: 'https://dishesdelish.com/wp-content/uploads/2018/06/Tequila-Sunrise-Cocktail-7.jpg',
+						tag: {
+								FEMALE: true,
+								HAPPY: true
+						}
+				}),
+				productsRef.add({
+						name: 'Watermelon Cocktail',
+						picture: 'https://spicysouthernkitchen.com/wp-content/uploads/Watermelon-Cocktail-4.jpg',
+						tag: {
+								FEMALE: true,
+								SAD: true
+						}
+				}),
+				productsRef.add({
+						name: 'Wild Cocktail',
+						picture: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/09/30/10/cocktails.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
+						tag: {
+								MALE: true,
+								SAD: true
+						}
+				}),
+				productsRef.add({
+						name: 'Rum Punch',
+						picture: 'https://www.crazyforcrust.com/wp-content/uploads/2018/08/Rum-Punch-5.jpg',
+						tag: {
+								FEMALE: true,
+								HAPPY: true
+						}
+				}),
+				productsRef.add({
+						name: 'Cappucchino',
+						picture: 'https://cdn-image.foodandwine.com/sites/default/files/1568907144/Coffee-National-Coffee-Day-FT-Blog0919.jpg',
+						tag: {
+								FEMALE: true,
+								HAPPY: true
+						}
+				}),
+				productsRef.add({
+						name: 'Black Coffee',
+						picture: 'https://specials-images.forbesimg.com/imageserve/1152308114/960x0.jpg?fit=scale',
+						tag: {
+								MALE: true,
+								SAD: true,
+								DEFAULT: true
+						}
+				}),
+				productsRef.add({
+						name: 'Milk Coffee',
+						picture: 'https://www.slashgear.com/wp-content/uploads/2019/07/coffee_main_envat-1280x720.jpg',
 						tag: {
 								FEMALE: true,
 								MALE: true,
-								happy: true,
-								sad: true
+								HAPPY: true,
+								SAD: true
 						}
 				}),
 				productsRef.add({
-						name: 'Milk tea',
-						picture: 'https://i1.wp.com/yummiestreetfood.com/wp-content/uploads/2017/03/Yummie-Street-Food-Tea-4.jpg?fit=1920%2C1080&ssl=1',
+						name: 'Matcha Milkshake',
+						picture: 'https://www.ohhowcivilized.com/wp-content/uploads/2014/07/0318-matcha-milkshake-7-720x720.jpg',
 						tag: {
 								FEMALE: true,
-								happy: true
+								MALE: true,
+								HAPPY: true,
+								SAD: true
 						}
 				}),
-				productsRef.add({
-						name: 'Matcha freeze',
-						picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEW7VhvguBmkCo5JxdjLVz663hum0oU9NakRjJh4nMMTeA2Aij',
-						tag: {
-								FEMALE: true,
-								happy: true
-						}
-				})
 		])
 				.then(() => console.log('DONE'))
 				.catch(err => console.log(err));

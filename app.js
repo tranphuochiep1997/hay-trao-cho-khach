@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/readme', express.static(path.join(__dirname, 'README.md')));
+app.use('/node_modules', express.static(path.join(__dirname, './node_modules')));
 
 app.use('/', indexRouter);
 

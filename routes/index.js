@@ -10,6 +10,8 @@ router.get('/', function (req, res) {
 router.post('/customer-coming', async (req, res) => {
 		try {
 				let { id, gender, emotion } = req.body;
+				gender = gender.toUpperCase();
+				emotion = emotion.toUpperCase();
 				const customersRef = db.collection('Customers');
 				let aCustomerRef = {};
 				if (id) {
@@ -34,12 +36,15 @@ router.post('/customer-coming', async (req, res) => {
 				let count = customer.count;
 
 				const productsRef = db.collection('Products');
-				const products = await productsRef
+				let products = await productsRef
 						.where(`tag.${gender}`, '=', true)
 						.where(`tag.${emotion}`, '=', true)
 						.limit(3)
 						.get();
 				let recommends = [];
+				if (products.empty) {
+						products = await productsRef.where('tag.DEFAULT', '=', true).get();
+				}
 				if (!products.empty) {
 						products.forEach(product => {
 								product = product.data();
