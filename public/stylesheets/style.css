@@ -67,6 +67,7 @@ body{
   padding: 0px;
   margin: 0px;
   margin-top: 30px;
+  min-height: 280px;
 }
 .recommends{
   padding: 0px;
