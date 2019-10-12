@@ -4,7 +4,7 @@
  * @apiDescription  Notify app customer is coming
  * @apiGroup Customers
  *
- * @apiParam {string|null} id User id generated from AI, null for unknown
+ * @apiParam {String} id User id generated from database, null for unknown
  * @apiParam {String=MALE,FEMALE} gender
  * @apiParam {String} emotion
  * @apiParamExample Example:
