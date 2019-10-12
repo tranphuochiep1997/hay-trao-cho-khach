@@ -293,37 +293,6 @@
     </div>
 </div>
 
-<!--<<<<<<< Updated upstream-->
-<!--						const firstTimeModal = $('#firstTimeModal');-->
-<!--						const bringCupModal = $('#bringCupModal');-->
-<!--						firstTimeModal.on('hidden.bs.modal', function (e) {-->
-<!--								bringCupModal.modal();-->
-<!--						});-->
-<!--						bringCupModal.on('hidden.bs.modal', function (e) {-->
-<!--								$('#strawModal').modal();-->
-<!--						});-->
-
-<!--						// Handle socket-->
-<!--						const socket = io();-->
-<!--						let lastUserId = null;-->
-<!--						let emptyCount = document.getElementById('empty');-->
-<!--						socket.on('customer-coming', function (data) {-->
-<!--								const {id, count, recommends} = data;-->
-<!--								animate(count);-->
-<!--								emptyCount.innerHTML = count;-->
-<!--								// Do nothing if user id unchanged-->
-<!--								if (lastUserId === id) {-->
-<!--										return;-->
-<!--								}-->
-<!--								// Update lasUserId-->
-<!--								lastUserId = id;-->
-
-<!--								// Show popup on first time user come-->
-<!--								if (count === 1) {-->
-<!--										firstTimeModal.modal();-->
-<!--								} else {-->
-<!--										bringCupModal.modal();-->
-<!--=======-->
 <!-- Tree Modal -->
 <div class="modal fade" id="treeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
@@ -497,12 +466,14 @@
 
 				socket.on('customer-coming', function (data) {
 						const {id, count, recommends} = data;
-						animate(count);
-                        $('#empty').html(count);
                         // Do nothing if user id unchanged
 						if (lastUserId === id) {
 								return;
 						}
+                        // Update lasUserId
+                        lastUserId = id;
+                        animate(count);
+                        $('#empty').html(count);
 						// Show popup on first time user come
 						if (count === 1) {
 								firstTimeModal.modal();
@@ -513,8 +484,7 @@
 										animate(10);
 								});
 						}
-						// Update lasUserId
-						lastUserId = id;
+
                         const textRM = document.getElementById("text-recomend");
                         textRM.innerHTML = "Recomendation";
 						const recommendEl = $('#recommends');
