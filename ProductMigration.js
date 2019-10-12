@@ -73,6 +73,33 @@ const { db } = require('./config/firebase');
 								SAD: true
 						}
 				}),
+				productsRef.add({
+						name: 'Milk tea',
+						picture: 'https://img.buzzfeed.com/thumbnailer-prod-us-east-1/719f1aa1501e443bb1856bce121e74d6/BFV41761_DeliciousAsianDrinks_FBFINAL_v5.jpg',
+						tag: {
+								FEMALE: true,
+								MALE: true,
+								NEUTRAL: true
+						}
+				}),
+				productsRef.add({
+						name: 'Lemon juice',
+						picture: 'http://juicyspot.in/wp-content/uploads/2019/03/juicy_spot_lemon_juice-1.jpg',
+						tag: {
+								FEMALE: true,
+								MALE: true,
+								NEUTRAL: true
+						}
+				}),
+				productsRef.add({
+						name: 'Soda',
+						picture: 'https://cafedidong.vn/wp-content/uploads/2019/01/CAFEDIDONG-SODA-BLUE-OCEAN-18a.jpg',
+						tag: {
+								FEMALE: true,
+								MALE: true,
+								NEUTRAL: true
+						}
+				}),
 		])
 				.then(() => console.log('DONE'))
 				.catch(err => console.log(err));
